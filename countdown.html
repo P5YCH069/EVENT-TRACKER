@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Tracker</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="stylesheet" href="countdown.css" />
+</head>
+<body>
+
+<canvas id="confetti-canvas"></canvas>
+
+<div class="container">
+  <h1>Event tracker</h1>
+  <p class="subtitle">Count down to future events or count up from past ones.</p>
+
+  <p class="mode-label">Mode</p>
+  <div class="mode-toggle">
+    <button class="mode-btn active" id="btn-future" onclick="setMode('future')">Countdown</button>
+    <button class="mode-btn" id="btn-past" onclick="setMode('past')">Past event</button>
+  </div>
+
+  <div class="input-row">
+    <input type="text" id="eventName" placeholder="Event name" />
+    <input type="datetime-local" id="targetDate" />
+    <button class="primary" onclick="startCountdown()">Start</button>
+  </div>
+
+  <div class="sound-row">
+    <label>
+      <input type="checkbox" id="soundToggle" checked />
+      <i class="ti ti-volume" aria-hidden="true"></i> Tick sound
+    </label>
+  </div>
+
+  <div id="display">
+    <p class="event-name" id="displayName"></p>
+    <p class="target-date" id="displayDate"></p>
+    <div class="grid">
+      <div class="unit" id="u-y"><span class="unit-val" id="y">0</span><span class="unit-lbl">years</span></div>
+      <div class="unit" id="u-mo"><span class="unit-val" id="mo">0</span><span class="unit-lbl">months</span></div>
+      <div class="unit" id="u-d"><span class="unit-val" id="d">0</span><span class="unit-lbl">days</span></div>
+      <div class="unit" id="u-h"><span class="unit-val" id="h">0</span><span class="unit-lbl">hours</span></div>
+      <div class="unit" id="u-mi"><span class="unit-val" id="mi">0</span><span class="unit-lbl">minutes</span></div>
+      <div class="unit" id="u-s"><span class="unit-val" id="s">0</span><span class="unit-lbl">seconds</span></div>
+    </div>
+    <div id="statusMsg"></div>
+  </div>
+</div>
+
+<script src="countdown.js"></script>
+
+</body>
+</html>
